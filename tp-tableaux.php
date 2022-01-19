@@ -62,16 +62,16 @@ body{
             shuffle($tab);
 
 			// Étape 3
-            array_splice($tab, 16);
-
+            $tab2 = array_splice($tab, 0, 16);
+			
 			// Étape 4
-            $tab2 = array_merge($tab, $tab);
+            $tab3 = array_merge($tab2, $tab2);
 
 			// Étape 5
-            shuffle($tab2);
+            shuffle($tab3);
             
 			// Étape 6
-            $_SESSION["tab"] = $tab2;
+            $_SESSION["tab"] = $tab3;
             foreach($_SESSION["tab"] as $x)
             {
                 echo("<div><img src='./images/".$x.".jpg' width='80' data-id=".$x."></div>");
